@@ -1,0 +1,90 @@
+===================================
+███    ██ ███    ███  █████  ██████  
+████   ██ ████  ████ ██   ██ ██   █ 
+██ ██  ██ ██ ████ ██ ███████ ██████  
+██  ██ ██ ██  ██  ██ ██   ██ ██      
+██   ████ ██      ██ ██   ██ ██      
+===================================
+
+[GRAPHIQUE]
+
+sudo apt install zenmap
+zenmap
+
+[TARGET]
+
+nmap 192.168.1.1          -> Scan a single IP 	
+nmap www.testhostname.com -> Scan a host 	
+nmap 192.168.1.1-20       -> Scan a range of IPs
+nmap 192.168.1.0/24       -> Scan a subnet
+nmap -iL list-of-ips.txt  -> Scan targets from a text file
+
+[FIREWALL]
+
+TCP Null Scan
+nmap -sN 192.168.1.1 -> Aucun bit (l'en-tête de l'indicateur TCP est 0)
+
+TCP Fin Scan
+nmap -sF 192.168.1.1 -> Uniquement le bit TCP FIN
+
+TCP Xmas Scan
+nmap -sX 192.168.1.1 -> Drapeaux FIN, PSH et URG (allumant le paquet comme un arbre de Noël)
+
+[TYPE]
+
+nmap -sT 192.168.1.1                -> Scan using TCP connect
+nmap -sS 192.168.1.1                -> Scan using TCP SYN scan (default)
+nmap -sU -p 123,161,162 192.168.1.1 -> Scan UDP ports
+nmap -Pn -F 192.168.1.1             -> Scan selected ports - ignore discovery
+
+[PORT]
+
+nmap -p 22 192.168.1.1    -> Scan a single Port
+nmap -p 1-100 192.168.1.1 -> Scan a range of ports
+nmap -F 192.168.1.1       -> Scan 100 most common ports (Fast)
+nmap -p- 192.168.1.1      -> Scan all 65535 ports
+
+[OS & SERVICE] 
+
+nmap -A 192.168.1.1                        -> Detect OS and Services
+nmap -sV 192.168.1.1                       -> Standard service detection
+nmap -sV --version-intensity 5 192.168.1.1 -> More aggressive Service Detection
+nmap -sV --version-intensity 0 192.168.1.1 -> Lighter banner grabbing detection
+
+[HTTP]
+
+nmap --script=http-title 192.168.1.0/24   ->Gather page titles from HTTP services
+nmap --script=http-headers 192.168.1.0/24 ->Get HTTP headers of web services
+nmap --script=http-enum 192.168.1.0/24    ->Find web apps from known paths
+
+[IP]
+
+nmap --script=asn-query,whois,ip-geolocation-maxmind 192.168.1.0/24 -> Find Information about IP address
+
+[OUTPUT]
+
+nmap -oN outputfile.txt 192.168.1.1 -> Save default output to file
+nmap -oX outputfile.xml 192.168.1.1 -> Save results as XML
+nmap -oG outputfile.txt 192.168.1.1 -> Save results in a format for grep
+nmap -oA outputfile 192.168.1.1     -> Save in all formats
+
+[OPTIONS]
+
+-F   -> Fast mode
+-sS  -> Scan SYN TCP (discret)
+-sU  -> Scan UDP
+-sT  -> Scan TCP
+-sn  -> Scan Ping
+-T1  -> Baisse l'intensite
+
+-A   -> cumule des options
+
+-O   -> OS version
+-p-  -> Tout les ports
+-sV  -> Ask port version
+-t0  -> Temps entre chaque port
+-PO  -> Protocole
+-ON  -> Creation de fichier
+-V   -> Version de nmap
+
+--traceroute

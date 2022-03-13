@@ -1,0 +1,400 @@
+===================================================
+ ██████   ██████   ██████   ██████  ██      ███████ 
+██       ██    ██ ██    ██ ██       ██      ██      
+██   ███ ██    ██ ██    ██ ██   ███ ██      █████   
+██    ██ ██    ██ ██    ██ ██    ██ ██      ██      
+ ██████   ██████   ██████   ██████  ███████ ███████ 
+===================================================
+
+[PDF]
+
+[OPERATEUR]
+
+[BOOLEEN]
+
+"Pattern"             -> cherche l'expression exact
+-Pattern              -> exclusion
+PatternA AND PatternB -> exclusif
+
+[SPECIFIQUE]
+
+cache:roiseux.fr          -> affiche le cache des pages
+
+site:roiseux.fr           -> cherche sur le site
+
+allinurl:MotDansLurL      -> cherche dans les noms de domaine
+
+allintitle:MotDansLeTitre -> cherche dans les titres
+
+filetype:PDF              -> Only le type de fichier specifie
+
+related:                  -> site similaire
+
+link:www.google.com       -> List webpages that have links pointing to the Google
+
+[DORKS]
+
+https://www.exploit-db.com/google-hacking-database
+
+==================================================
+
+Fwd: intitle:"Index of /" intext:"resource/"    
+site:gov.* intitle:"index of" *.csv 
+Fwd: intitle:"atvise - next generation" 
+site:papaly.com + keyword   
+Google to wordpress 
+inurl:admin filetype:xlsx site:gov.*    
+inurl:admin filetype:xls    
+inurl:/intranet/login.php   
+site:pastebin.com intitle:"cpanel"  
+site:gov.* intitle:"index of" *.apk 
+db_password filetype:env    
+inurl: /wp-content/uploads/ inurl:"robots.txt" "Disallow:" filetype:txt 
+site:postman.com + keyword  
+inurl:"*admin | login" | inurl:.php | .asp  
+intitle:index of settings.py    
+intitle:"Teltonika -Web UI" | intitle:"Teltonika-RUT -Web UI" inurl:"/cgi-bin/luci" 
+inurl:admin filetype:txt    
+inurl:/admin/login.php intitle:("Iniciar sesion" OR "Login")    
+intitle:"MODBUS TCP RS485 Converter" intext:"Module Name: MMTCPBCONV" "powered by Atmel ARM." 
+inurl:admin filetype:xls site:gov.in    
+intitle:"Secure Access Service" inurl:"/dana-na/auth/url_default/welcome.cgi" 
+intext:"Real-time IP Camera Monitoring System" intext:"ActiveX Mode (For IE Browser)" 
+intitle:"Login" intext:"cam"    
+site:controlc.com intext:"password" 
+site:*.ng intitle:index of  
+inurl:adm/login.jsp.bak Vulnerable Servers  Md Anzaruddin
+site:*.in inurl:jira login  
+site:*.github.io intext:cheatsheet+offensive+pentesting 
+site:rentry.co intext:"password"    
+Fwd: intitle:"Schneider Electric Telecontrol - Industrial Web Control" intext:"Xflow "  
+intitle:"index of" "wp-inc" 
+intitle:"index of" "*.vcf"  
+intitle:"index of" "*.yaml" 
+inurl:*gov intitle:"index of/documents" 
+inurl:console/login.jsp 
+intitle:"index of" "*.pl"   
+intitle:"index of" "apache.log" | "apache.logs" 
+site:*.se intitle:"index of"    
+intitle:"index of" "*.php"  
+site:*.id intitle:"index of" "screenshot*.jpg"  
+inurl:pastebin "SHODAN_API_KEY" 
+site:.edu intext:"index of" "payroll"   
+intitle:"index of" "/products"  
+intitle:"index of" site:gov.in  
+intitle"index of" "php" 
+intitle:"index of" "admin.js"   
+inurl:*gov intitle:"index of" "docker-compose"  
+intitle:"index of" "/mysql" 
+inurl:EMSWebClient/ 
+allintext"account number"   
+site:*.edu.in intitle:index of  
+inurl admin login php gov.in    
+inurl *:8443/login.jsp  
+inurl:gov.in & inurl:admin  
+site:*.gov.au inurl:wp-admin    
+intitle:"index of" "*.phtml"    
+site:pastebin.com "admin password"  
+site:drive.google.com "*.pdf"   
+intitle:"Login" intext:"camera" 
+intitle:"index of "/key/" "key.txt" 
+site:.in | .com | .net intitle:"index of" ftp   
+intitle:"index of" "/public/js" 
+intitle:"index of" site:gov.*   
+intitle.index of API*.txt   
+site:.nic.in inurl:.php?id= 
+intitle:"index of" site:gov.np  
+intitle:"index of" site:gov.gr  
+intitle:"index of" "*.mp4"  
+inurl:node_modules/ua-parser-js 
+inurl:linkedin.com "view my resume" facebook    
+intitle.index of .exe   
+inurl:forgotpassword.php    
+intitle:"index of" "/public_html"   
+intitle:"index of" "sysinfo"    
+site:*/admin-portal/    
+inurl:.org intitle index.of "inflation" 
+intitle:"index of" "admin*.txt" 
+inurl:*gov intitle:"index of" "docker-compose"  
+intitle.index of .log   
+intitle:"index of" site:gov.ru  
+intitle:"index of" " mod_auth_mysql "   
+inurl:pastebin "Windows 10 Product Keys*"   
+inurl:*gov intitle:"index of/documents" 
+intitle:"index of" " sendmail.inc " 
+intitle:"index of" " htsearch " 
+intitle:"index of" " fileadmin "    
+inurl:pastebin "SHODAN_API_KEY" 
+site:pastebin.com "password"    
+intitle:"index of" "test.bat "  
+intitle:"index of" " glimpse "  
+intitle:"index of" " login.jsp "    
+intitle:"Index of" site:.in 
+site:com "rfp" filetype:pdf 
+intitle:"index of" "document*.pdf"  
+inurl:pastebin "API_KEY"    
+intitle:"index of" "/students"  
+intitle:"index of" "hello.bat " 
+inurl:.php?=*php site:.nic.in   
+inurl:pastebin "CVV"    
+intitle:"index of" upload.asp " 
+intitle:"index of" " webdriver "    
+intext:"Index of /chatlogs" 
+intitle:"index of" "dvwssr.dll "    
+intitle:"index of" "data*"  
+intitle:"index of" Servlet" 
+intitle:"index of" "browser.inc "   
+site:.edu intext:"index of" "logs"  
+site: com intext " organisation data" filetype:xls  
+intitle:"index of" "msadcs.dll "    
+intitle:"index of" " index.php.bak "    
+inurl:login.php site:.in    
+intitle:"index of" "default.asp "   
+intitle:"index of" " YaBB.pl "  
+site:smtp3.*.*/login    
+inurl:gov.in & inurl:wp-admin   
+index of" :excel documents 
+intitle:"index of" "/.cpanel"   
+intitle:"Index of" "DCIM/camera"    
+
+index of:"customer/login"   
+intitle:"Index of" "Program files"  
+site:*/forgotpassword.php   
+intitle:"index of" :mobile number   
+inurl:/commodities.php?id=  
+intitle:"webcamXP" inurl:8080   
+site:.edu intitle:"index of"    
+intext:"Index of" intext:"config.zip"   
+site:.edu inurl:search  
+inurl: conf/fastcgi.conf    
+site:gov.hk intitle:index of /  
+inurl:gov.in & (intitle:login | intitle:signin) 
+intitle:"Index of" "Screenshot" 
+intitle:"index of" "certificates"   
+site:pastebin.com "*@gmail.com password"    
+intitle: indexof/.git }    
+site:*.gov.in inurl:login.jsp   
+inurl:gov.uk & inurl:wp-admin   
+site:.edu.in inurl:login.php    
+site:pastebin.com intext:pass.txt   
+intitle:"index of" "node.js"    
+site:.edu inurl:login "Admin"   
+index of" :excel documents 
+inurl:conf/nginx.conf   
+index of:"seller/login" 
+intitle:"index of" "/.cpanel"   
+site:com intitle:"index of" .env    
+intitle:"Index of" *.py 
+inurl:gov.in & inurl:wp-admin   
+intitle:"Index of" "DCIM/camera"    
+intext:"index of" "wp-uploads"  
+intext:"untitled" intext:"admin" filetype:php   
+intitle:"database" "backup" filetype:sql    
+intitle:"index of" Hindi movies 
+intitle:"Index of /logs/" "nginx"   
+site:.edu.in inurl:login.aspx   
+intitle:"index of" "Apache/2.4.41 (Ubuntu) Server"  
+site:gitlab.* intext:password intext:@gmail.com | @yahoo.com | @hotmail.com 
+inurl:wp-content/uploads/wooccm_uploads 
+inurl:gov.uk    
+intext:"Index of" intext:"password.zip" 
+intext:"index of" "home_page"   
+inurl:/mutillidae/ "Toggle Hints"   
+filetype:txt site:gitlab.* "secret" OR "authtoken"  
+site:gov.in inurl:/admin/login  
+intext:"index of" inurl:/etc/   
+inurl:login.net 
+inurl: */.env   
+inurl:8888 ext:php inurl:login  
+index of: "invoice" "upload"    
+intitle:"index of" "dhcp"   
+intext:"Index of" intext:"users.zip"    
+site:com inurl:/admin/login 
+intitle:"index of" "/.git/config"   
+site:.edu.in inurl:login.aspx   
+intext:"Index of" "services.php | pass.php | passwd.php | credentials.txt"  
+inurl:gov.in    
+index of: "participants" "uploads"  
+intext:"sitemap" filetype:txt   
+index of: "marksheet" "upload"  
+intext:"index of" "user-config" 
+intext:"index of" "signin"  
+intitle:"index of" "*/ftp.txt"  
+intitle:MailEnable inurl:"/Login.aspx"  
+inurl:4444 ext:php inurl:login  
+inurl:80 ext:php inurl:login    
+inurl:cache/uploads 
+site:in inurl:/admin/login  
+intitle:"index of" "particle.js"    
+intitle"index of" "username" "password" filetype: xlsx  
+intext:pass filetype:txt    
+index of:"blog" "upload"    
+inurl:/package.json 
+intext:"index of" "uploads" 
+intitle:" - General Status [none]"  
+inurl:newsdesk.cgi? 
+index of: "putty" "uploads" 
+intext:"untitled" intext:"login" filetype:php   
+Intitle:database ext:sql    
+index of: "certificate" "wp-content"    
+intitle:"index of" "_vti_inf.html"  
+index of: "application form" "upload"   
+intitle:"index of" "/resources" 
+intext:"untitled" intext:"password" filetype:php    
+intitle:"index of" "master03.xml"   
+index of: "documents" "wp-content"  
+index of: "cache" "uploads" 
+index of :"uploads" "parent" "salary" intext:salary 
+index of:"password" "wp-content"    
+index of: "certificate" "upload"    
+inurl:admin ext:sql 
+intitle:"index of" "admin-config"   
+inurl *:8080/login.php  
+intitle:"index of" ".ssh/authorized_keys"   
+inurl:errorlog.axd ext:axd  
+intitle:"index of" "untitled"   
+index of : "truecaller" "uploads"   
+site:pastebin.com intext:password.txt   
+intitle:"index of" "script.js"  
+index of :wp-config.zip 
+intext:"password" | "passwd" | "pwd" site:anonfiles.com 
+intitle:"index of" "service.pwd"    
+index of: "parent directory" "uploads"  
+intitle:"index of" "admin.login.php"    
+intitle:"index of" "admin.login.php"    
+intitle:"index of" "untitled" "wp-content" intext:scanned   
+intitle:"index of" "stylesheet.css" 
+intext:"password" | "passwd" | "pwd" site:ghostbin.com  
+index of: "license" "upload"    
+index of: "contracts" "uploads" 
+intitle:"index of" " wp-mail-smtp"  
+showing putty logs  
+inurl:/carbon/admin/login.jsp   
+index of: "confidential" "uploads"  
+site:*.example.com inurl:(elmah.axd | errorlog.axd) ext:axd 
+intitle:"index of" "pres.xml"   
+intext:"index of" "ftp" 
+index of : "phonebook " 
+index of: "QRcodes" "uploads"   
+intitle:"webmail Login"
+site:*.example.com inurl:(elmah.axd | errorlog.axd) ext:axd 
+intitle:"index of" "shtml.dll " 
+index of: "contracts" "uploads" 
+intitle:"index of" "master01"   
+intitle:"index of" "pkgs"   
+intitle:"index of" "metin"  
+intitle:"index of" "html-en"    
+intitle:"index of" "cygwin" 
+intitle:"index of" "filelist.xml"   
+intitle:"index of" " gettext"   
+intitle:"index of" "mirror.koddos.net"  
+intitle:"index of" "html-intro" 
+intitle:"index of" " src "  
+intitle:"index of" "echo-linux" 
+intitle:"index of" "txdot"  
+intitle:"index of" " src.hint"  
+intitle:"index of" "tar.xz" 
+intitle:"index of" " cldr-data" 
+intitle:"index of" " unidecode" 
+intitle:"index of" "-login.php" 
+intitle:"index of" "kde-l10n-de"    
+intitle:"index of" "ftp.riken   
+intitle:"index of" "Squid-cache"    
+intitle:"index of" "pub"    
+intitle:"index of" " Server-Side "  
+Google Dork 
+intitle:"index of" "DOCS-TECH " 
+intitle:"Kerio Connect Client" inurl:"/webmail/login/"  
+intitle:"index of" " py-text"   
+intitle:"index of" "css"    
+Google Dork 
+Google Dork 
+intitle:"index of" "htdocs" 
+intitle:"index of" "wp-content" 
+intitle:"index of" "CD.pdf "    
+intitle:"index of" "oxid-esales"    
+intitle:"index of" "mips32el-nf"    
+intitle:"RM Portal" 
+intitle:"index of" ".env"   
+intitle:"Index of /" intext:"pass.txt"  
+intitle:"index of" "-qpf"   
+intitle:"I-Portal" inurl:"login.jsp"    
+intitle:"index of" "lngs.infn.it "  
+site:github.com intext:"unattend xmlns" AND "password" ext:xml  
+intitle:"index of" "ppt.html"   
+intitle:"index of" "XML.Xerces "    
+intitle:"index of" "extra"  
+intitle:"index of" "extranet"   
+intitle:"index of" "-XML.pdf "  
+intitle:"index of" "pptx"   
+intitle:"index of" " .AndroidManifest.xml"  
+intitle:"index of" "XML "   
+intitle:"TOTVS SmartClient HTML - Parâmetros Iniciais"  
+intitle:"index of" "slides-ppt" 
+intitle:"index of" "-ipk"   
+intitle:"index of" "Packages.gz"    
+intext:"Index of" "email.txt"   
+inurl:WS_FTP.log    
+intitle:"index of" "workspace.xml"  
+intitle:"index of" "infn.it"    
+intitle:"index of" ".phpunit.xml"   
+intitle:"index of" "fsi"    
+intext:"/pfx-password.txt" "[To Parent Directory]"  
+intitle:"index of" ".ppt"   
+intitle:"Gophish - Login"   
+intitle:TYPO3 CMS Login: New TYPO3 site inurl:/typo3/index.php  
+intext:"admin" AND "login" | "sign in" AND "©" AND "rights reserved"    
+site:pastebin.com intext:license key | expiration   
+intitle:index.of /cftp /robots.txt  
+inurl:php?id=" site:.gov.bd    
+inurl:/wp-content/uploads/ ext:txt "username" | "user name" | "uname" | "user" | "userid" | "user id" AND "password" | "pass word" | "pwd" | "pw"   
+inurl:php?id=" site:.com   
+site:pastebin.com intext:username | password | SECRET_KEY   
+intitle:"index of" ".private.xml"   
+Index of /vendor/spatie/robots-txt  
+site:pastebin.com intext:username | password | secret_key | token   
+allinurl:index.php?page= site:.gov.in   
+site:pastebin.com intext:"administrator:500:"   
+intitle:index.of /email /robots.txt 
+inurl:"brandmeister page=login" 
+inurl:login/users.pwd   
+intitle:Hikvision login page    
+intext: "mailenable" inurl:"/lang/sys/login.aspx"   
+intitle:"index of" "/backup/sql"    
+intitle:"LoRaWAN Login" 
+intitle:"index of" "server.log" 
+inurl:password site:shodan.io   
+inurl:"wp-login.php?action=login"   
+intitle:"password reset"    
+Index of /apidoc/api-web/target/classes/    
+intitle:ip camera login page    
+intitle:index.of /CMS /robots.txt   
+site:.bd http intitle: admin    
+intitle:"index of" "server.properties"  
+intitle:"Admin Login" inurl:"login.aspx"    
+intitle:index of cv site:.com   
+intext:swagger filetype:log 
+intitle:"Student" inurl:"login.aspx"    
+intitle:"index of" ".env.example"   
+intitle:"Employee Login" & inurl:("login.aspx" | "login.asp")   
+intitle:"HRMS" inurl:"login.aspx"   
+inurl:"robots" | "robot" intext:"admin" AND "Disallow" ext:txt  
+intitle:index.of wp.login   
+inurl:"index.php" intitle:"CMS Login"   
+intext:Project hosted at: For support, contact: Copyright Openbravo 
+intitle:"index of" "mongod*"    
+intitle:index.of /Snowflake /robots.txt 
+inurl:/wp-content/plugins/simple-forum/admin/   
+intitle:"Microseven M7CAM IP Camera"    Various Online Devices  Neha Singh
+intitle:"Journal" inurl:"login.aspx"    
+inurl:/designs/imm/index.php    
+intitle:"TYPO3 CMS Login"   
+intitle:"index of" "passwrod*"  
+site:*/membership-login/    
+intitle:"Sign in [Jenkins]" inurl:"login?from"  
+intext:"password" intitle:"index of"    
+inurl:"app.yaml" intext:"runtime: " ext:yaml    
+inurl:/phpldapadmin/cmd.php 
+intitle:"Sophos" inurl:/userportal/webpages/myaccount/login.jsp 
+intitle:"CMS" inurl:"login.php"
+ 

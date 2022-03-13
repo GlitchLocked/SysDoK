@@ -1,0 +1,31 @@
+
+         =============================
+         ███████ ██  ██████  ███    ██ 
+         ██      ██ ██       ████   ██ 
+         ███████ ██ ██   ███ ██ ██  ██ 
+              ██ ██ ██    ██ ██  ██ ██ 
+         ███████ ██  ██████  ██   ████ 
+         =============================
+
+====================================================
+Vérification des signatures pour assurer l'integrite
+Generation de l'emprunte actuelle
+pour la comparer avec celle du fichier original
+fournit par l'emmeteur  
+====================================================
+
+[PAQUET]============================================
+
+sudo dpkg --verify 
+
+[AUDIT]
+
+sudo apt install debsums
+
+debsums --all | grep -v OK
+
+[FILES]==============================================
+
+md5sum machin.iso
+
+./script/INTEGRITY_MONITOR.sh

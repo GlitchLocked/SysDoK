@@ -1,0 +1,57 @@
+=========================================
+██   ██ ████████ ████████ ██████  ███████ 
+██   ██    ██       ██    ██   ██ ██      
+███████    ██       ██    ██████  ███████ 
+██   ██    ██       ██    ██           ██ 
+██   ██    ██       ██    ██      ███████ 
+=========================================
+
+
+
+ ██ 
+███ 
+ ██ 
+ ██ 
+ ██ 
+
+[SERVICE]
+
+sudo service nginx stop
+
+
+██████  
+     ██ 
+ █████  
+██      
+███████ 
+
+[INSTALL]
+
+sudo apt install certbot
+
+
+██████  
+     ██ 
+ █████  
+     ██ 
+██████  
+        
+[GENERATE]
+
+certbot certonly --standalone -d example.com -d www.example.com
+
+verification
+
+/etc/letsencrypt/live/example.com/
+
+
+██   ██ 
+██   ██ 
+███████ 
+     ██ 
+     ██ 
+[CONFIGURATION]
+
+NGINX
+
+sudo nano /etc/nginx/sites-available/exemple

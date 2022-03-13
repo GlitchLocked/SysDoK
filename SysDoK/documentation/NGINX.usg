@@ -1,0 +1,205 @@
+
+         =======================================
+         ███    ██  ██████  ██ ███    ██ ██   ██ 
+         ████   ██ ██       ██ ████   ██  ██ ██  
+         ██ ██  ██ ██   ███ ██ ██ ██  ██   ███   
+         ██  ██ ██ ██    ██ ██ ██  ██ ██  ██ ██  
+         ██   ████  ██████  ██ ██   ████ ██   ██
+         =======================================
+
+[INTEGRITY] (key refresh)
+wget http://nginx.org/keys/nginx_signing.key
+sudo apt-key add nginx_signing.key && rm nginx_signing.key
+sudo apt update
+
+[VERSION]
+nginx -V
+
+[INSTALLATION]
+sudo  apt install nginx
+sudo apt install nginx-extras
+
+[CONFIGURATION]
+sudo nano /etc/nginx/nginx.conf
+sudo nano /etc/nginx/site-enabled/NOMduSITE
+
+[TEST]
+    /etc/init.d/nginx configtest
+or
+    sudo nginx -t
+
+[START]
+sudo /etc/init.d/nginx start
+
+[REDEMARRAGE]
+service nginx reload
+service nginx restart
+
+
+[NGINX.CONF]============================================================================
+
+# Client folder access
+user www-data;
+
+# calibrer en fonction des noyaux system => grep -c ^processor /proc/cpuinfo
+worker_processes auto;
+
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+    #maximum number of connections that each worker process can handle simultaneously
+    worker_connections 512;
+    
+    # multi_accept on;
+}
+
+http {
+
+    # Hidden nginx version 
+    more_set_headers "Server: NoWay";
+    
+    # Disables emitting nginx version on error pages and in the “Server” response header field. 
+    server_tokens off;
+    
+    # Protection Headers
+    add_header X-Content-Type-Options nosniff;
+    add_header X-XSS-Protection "1; mode=block";
+    
+    # SSL Settings
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # Dropping SSLv3, ref: POODLE
+    ssl_prefer_server_ciphers on;
+    
+    # Log
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+    
+    # Virtual Host Configs
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
+    
+    # DEFAULT CONFIG
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+    types_hash_max_size 2048;
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    # server_names_hash_bucket_size 64;
+    # server_name_in_redirect off;
+    gzip on;
+    gzip_disable "msie6";
+    # gzip_vary on;
+    # gzip_proxied any;
+    # gzip_comp_level 6;
+    # gzip_buffers 16 8k;
+    # gzip_http_version 1.1;
+    # gzip_types text/plain text/css application/json application/javascript text/xml;
+}
+========================================================================================
+
+[SITE]==================================================================================
+sudo nano /etc/nginx/site-enabled/NOMduSITE
+
+# LIMITE DEBIT TRANSFERT 
+ limit_req_zone $binary_remote_addr zone=one:10m rate=20r/s;
+ 
+ upstream lawebfood {
+ 
+     # SERVER NODE
+     server localhost:9000;
+ 
+ }
+ 
+ server {
+ 
+     # PORT
+     listen 80;
+     listen [::]:80;
+     listen 443 ssl;
+ 
+     # NAME
+     server_name lawebfood.fr;
+ 
+     # HTTPS 
+     ssl_certificate /etc/letsencrypt/live/lawebfood.fr/fullchain.pem;
+     ssl_certificate_key /etc/letsencrypt/live/lawebfood.fr/privkey.pem;
+ 
+ 
+     location / {
+ 
+         # LOG THE SERVER REFUSES TO PROCESS REQUESTS DUE TO RATE EXCEEDING
+         limit_req_log_level warn;
+         
+         # STATUS CODE RETURN FOR REJECTED REQUESTS
+         limit_req_status 444;
+         
+         # SET HEADER
+         add_header X-Frame-Options SAMEORIGIN;
+         add_header version noWay;
+ 
+         # LIMIT REQUEST TYPE
+         #if ($request_method !~ ^(GET|HEAD|POST)$ ) { return 444; }
+         limit_except GET { deny all; }
+            
+         # LIMITE DEBIT TRANSFERT 
+         limit_req zone=one burst=20 nodelay;
+ 
+         # LIMIT REQUEST FROM ORIGIN SOURCE
+         if ($host !~ ^(lawebfood.fr|www.lawebfood.fr)$ ) {
+                 return 444;
+         }
+         proxy_pass http://lawebfood;
+         proxy_set_header Access-Control-Allow-Origin *;
+ 
+         # BLOCK USER AGENT
+         # if ($http_user_agent ~* LWP::Simple|BBBike|wget) { return 403; }
+ 
+         #BLOCK USER AGENT
+         if ( $http_referer ~* (babes|forsale|girl|jewelry|love|nudit|organic|poker|porn|sex|teen|porn) ) { return 403; }
+         # if ($block_ua) { return 444; }
+ 
+         ## BLOCK IP
+         #deny    192.168.1.1;
+         ## allow anyone sur le sous reseau
+         # allow   192.168.1.0/24;
+         ## drop rest of the world
+         # deny    all;
+ 
+     }
+ 
+ }
+ 
+ map $http_user_agent $block_ua {
+     default                                  0;
+ 
+     ~*360Spider                              1;
+     ~*80legs                                 1;
+     ~*Default\ Browser\ 0                    1;
+     ~*miner                                  1;
+     ~*Ninja                                  1;
+     ~*nmap                                   1;
+     ~*Nmap                                   1;
+     ~*Octopus                                1;
+     ~*Openfind                               1;
+     ~*OpenindexSpider                        1;
+     ~*OpenLinkProfiler                       1;
+     ~*OpenWebSpider                          1;
+     ~*OrangeBot                              1;
+     ~*purebot                                1;
+     ~*pycurl                                 1;
+     ~*python\-requests                       1;
+     ~*QueryN\.Metasearch                     1;
+     ~*QuerySeekerSpider                      1;
+     ~*Slackbot                               1;
+     ~*Slurp                                  1;
+     ~*siteexplorer\.info                     1;
+     ~*WPScan                                 1;
+     ~*Website\.eXtractor                     1;
+     ~*Website\ eXtractor                     1;
+     ~*Curl                                   1;
+     # [...] copy list 
+ }
+
+========================================================================================

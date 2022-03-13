@@ -1,0 +1,186 @@
+                         ================
+                         ████████ ███████ 
+                         ██    ██ ██      
+                         ██    ██ ███████ 
+                         ██    ██      ██ 
+                         ████████ ███████ 
+                         ================
+
+================================================================
+                            [VERSION]
+================================================================
+
+cat /etc/issue
+
+uname -a
+
+(cat /proc/version || uname -a ) 2>/dev/null
+
+lsb_release -a 2>/dev/null
+
+================================================================
+                              [ENV]
+================================================================
+
+(env || set) 2>/dev/null
+
+================================================================
+                             [PATH]
+================================================================
+
+echo $PATH
+
+================================================================
+                             [USERS]
+================================================================
+
+[MOI]
+
+id || (whoami && groups) 2>/dev/null
+
+[list]
+
+awk -F: '{ print $1}' /etc/passwd
+
+cat /etc/passwd | grep "sh$"
+
+[current open session]
+
+who -aH
+
+w
+
+================================================================
+                              [PASSWD POLITIQUE]
+================================================================
+
+grep "^PASS_MAX_DAYS\|^PASS_MIN_DAYS\|^PASS_WARN_AGE\|^ENCRYPT_METHOD" /etc/login.defs
+
+
+================================================================
+                              [CPU]
+================================================================
+
+lscpu
+
+================================================================
+                              [USB]
+================================================================
+
+lsusb
+lsusb -v
+
+================================================================
+                           [PROCESS]
+================================================================
+
+[TOP]
+
+Par défaut, son critère de tri est l'utilisation actuelle du processeur (touche P), mais on peut opter pour la mémoire occupée (touche M), le temps processeur consommé (touche T) ou le numéro de processus ou PID (touche N). La touche k (comme kill) nécessite un numéro de processus à tuer. r (comme renice) change la priorité d'un processus. 
+
+[RAM]
+
+free
+
+ps aux | sort -nk +4 | tail
+
+================================================================
+                              [FIND]
+================================================================
+
+Find Binaries that will execute as the owner
+
+    find / -perm -u=s -type f 2>/dev/null
+
+Find binaries that will execute as the group
+
+    find / -perm -g=s -type f 2>/dev/null
+
+Find sticky-bit binaries
+
+    find / -perm -1000 -type d 2>/dev/null
+
+If Python is executable as root
+
+    python2.7 -c "import pty;pty.spawn('/bin/sh');"
+
+[Recursively Find Hidden Files: Windows]
+
+dir /A:H /s "c:\program files"
+
+================================================================
+                            [SERVICES]
+================================================================
+
+service --status-all
+
+================================================================
+                            [COMMAND]
+================================================================
+
+history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+
+
+================================================================
+                            DEVICES]
+================================================================
+
+lspci
+
+================================================================
+                         [HARDWARE]
+================================================================
+
+sudo apt install lshw
+
+sudo lshw
+sudo lshw -short 
+
+sudo dmidecode -t memory
+
+================================================================
+                             [LOG]
+================================================================
+
+ls -lrt /var/log
+
+sudo journalctl
+
+sudo tail -n2 -f /var/log/LEFICHIERDE.log
+
+================================================================
+                         [TEMPERATURE]
+================================================================
+
+sudo apt install lm-sensors
+sensors | grep
+
+================================================================
+                            [FILES]
+================================================================
+
+/etc/passwd            -> Contains local Linux users.
+
+/etc/shadow            -> Contains local account password hashes.
+
+/etc/group             -> Contains local account groups.
+
+/etc/init.d/           -> Contains service init script - worth a look to see whats installed.
+
+/etc/hostname          -> System hostname.
+
+/etc/network/interface -> Network interfaces.
+
+/etc/resolv.conf       -> System DNS servers.
+
+/etc/profile           -> System environment variables.
+
+~/.ssh/                -> SSH keys.
+
+~/.bash_history        -> Users bash history log.
+
+/var/log/              -> Linux system log files are typically stored here.
+
+/var/adm/              -> UNIX system log files are typically stored here.
+
+/etc/fstab             -> File system mounts.

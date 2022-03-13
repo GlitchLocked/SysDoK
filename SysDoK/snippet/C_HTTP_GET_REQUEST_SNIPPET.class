@@ -1,0 +1,31 @@
+
+static Entity GetInfo(IOrganizationService Service, string nomTable, string[] ChampRecup, string champCondition, string variableCondition)
+        {
+            QueryExpression query = new QueryExpression();
+
+            query.ColumnSet = new ColumnSet(ChampRecup);
+            query.EntityName = nomTable;
+
+            FilterExpression Fe = new FilterExpression();
+
+            ConditionExpression Ce = new ConditionExpression();
+            Ce.AttributeName = champCondition;
+            Ce.Operator = ConditionOperator.Equal;
+            Ce.Values.Add(variableCondition);
+            Fe.AddCondition(Ce);
+
+            query.Criteria.AddFilter(Fe);
+
+            try
+            {
+                EntityCollection retrieve = Service.RetrieveMultiple(query);
+
+                return retrieve[0];
+            }
+            catch (Exception ex)
+            {
+                //throw new Exception(ex.Message);
+                Entity entity = new Entity();
+                return entity;
+            }
+        }

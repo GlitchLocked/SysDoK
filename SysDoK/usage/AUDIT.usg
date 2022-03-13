@@ -1,0 +1,71 @@
+====================================
+ █████  ██    ██ ██████  ██ ████████ 
+██   ██ ██    ██ ██   ██ ██    ██    
+███████ ██    ██ ██   ██ ██    ██    
+██   ██ ██    ██ ██   ██ ██    ██    
+██   ██  ██████  ██████  ██    ██    
+====================================
+
+====================================
+[INFORMATIONS]
+====================================
+
+[EXTRACT MAILS]
+
+theHarvester.py -d wonderhowto.com -b all -l 200
+
+[MOSINT]
+
+git clone https://github.com/alpkeskin/mosint.git
+
+cd mosint
+
+pip3 install -r requirements.txt
+
+go run main.go -e example@domain.com -all
+
+[METADATA]
+
+metagoogile -> Metagoofil is an information gathering tool designed for extracting metadata of public documents (pdf,doc,xls,ppt,docx,pptx,xlsx) 
+
+exiftool image.jpeg
+
+====================================
+[SCAN]
+====================================
+
+[RESEAU]
+
+netdiscover -r 192.168.8.1/24
+netdiscover -r 172.20.10.1/24
+
+sudo arp-scan 192.168.0.1/24
+sudo arp-scan 172.20.10.1/24
+
+sudo nmap -sP 192.168.0.1/24 | grep 192 | sed 's/^.*report for//g'
+sudo nmap -sP 172.20.10.1/24 | grep 172 | sed 's/^.*report for//g'
+
+[PORT]
+
+[ROUTE]
+
+====================================
+[ASPIRATEUR]
+====================================
+
+wget --recursive --page-requisites --adjust-extension --span-hosts --convert-links --restrict-file-names=windows --domains yoursite.com --no-parent yoursite.com
+========================================================================================
+     --recursive \ # Download the whole site.
+     --page-requisites \ # Get all assets/elements (CSS/JS/images).
+     --adjust-extension \ # Save files with .html on the end.
+     --span-hosts \ # Include necessary assets from offsite as well.
+     --convert-links \ # Update links to still work in the static version.
+     --restrict-file-names=windows \ # Modify filenames to work in Windows as well.
+     --domains yoursite.com \ # Do not follow links outside this domain.
+     --no-parent \ # Don't follow links outside the directory you pass in.
+         yoursite.com/whatever/path # The URL to download
+========================================================================================
+
+httrack www.someweb.com/bob/                   -> mirror site www.someweb.com/bob/ and only this site
+
+httrack www.someweb.com/bob/bobby.html +* -r6  -> means get all files starting from bobby.html, with 6 link-depth, and possibility of going everywhere on the web

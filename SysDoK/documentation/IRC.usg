@@ -1,0 +1,108 @@
+
+               ==================
+               ██ ██████   ██████ 
+               ██ ██   ██ ██      
+               ██ ██████  ██      
+               ██ ██   ██ ██      
+               ██ ██   ██  ██████ 
+               ==================
+
+================================================
+                    SERVEUR    
+================================================    
+
+irc.fantasya.org 6667
+
+freenode.net 
+join #suricata.
+
+thinkerview
+
+irc.root-me.org
+
+ANSSI ? CERT ? CNIL ?
+
+================================================
+                    COMMAND    
+================================================ 
+
+- Demande un cloack au admin du server
+
+/admin
+/info
+/timestamp
+
+/channel
+/Lusers
+/names
+
+/whois pseudo
+/dns pseudo
+/query pseudo
+/user host pseudo
+
+=============================================================
+███    ██ ██  ██████ ██   ██ ███████ ███████ ██████  ██    ██     
+████   ██ ██ ██      ██  ██  ██      ██      ██   ██ ██    ██     
+██ ██  ██ ██ ██      █████   ███████ █████   ██████  ██    ██     
+██  ██ ██ ██ ██      ██  ██       ██ ██      ██   ██  ██  ██      
+██   ████ ██  ██████ ██   ██ ███████ ███████ ██   ██   ████   
+=============================================================
+
+[INSCRIPTION]
+/msg nickserv info pseudo42
+/msg nickserv register passwd42 pseudo43@mail.eu
+
+[SETUP]
+
+/msg nickserv langage 2
+/msg nickserv HIDE
+/msg nickserv HOST
+/msg nickserv INFO pseudo
+/msg nickserv PRIVATE ON
+/msg nickserv STATUS PSEUDO
+
+[CONNEXION]
+
+[HELP]
+
+
+================================================
+         ██ ██████  ███████ ███████ ██ 
+         ██ ██   ██ ██      ██      ██ 
+         ██ ██████  ███████ ███████ ██ 
+         ██ ██   ██      ██      ██ ██ 
+         ██ ██   ██ ███████ ███████ ██
+================================================
+
+[THEME]
+
+/set theme NomDuTheme
+
+[CONFIG]
+
+/set nick LePseudo
+
+/set alternate_nick LePseudoBis
+/set real_name LeNom
+
+/serveur add -auto -network LeNomDuServ irc.srv.fr 6667
+/channel add -auto #LeChannel LeNomDuServ
+
+/save
+
+[USAGE]
+
+/connect leServeur
+/join #leChannel
+
+/window new split
+/window show 1
+
+[LOG]
+
+/set autolog on
+
+[SCRIPT]
+
+/load.pl

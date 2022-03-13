@@ -1,0 +1,133 @@
+/=============================================\
+||                      .__                  ||
+||   ____   ____   ____ |  |   ____   ____   ||
+|| _/ __ \_/ __ \ / ___\|  |  /  _ \ /  _ \  ||
+|| \  ___/\  ___// /_/  >  |_(  <_> |  <_> ) ||
+||  \___  >\___  >___  /|____/\____/ \____/  ||
+||      \/     \/_____/                  2021||
+\=============================================/
+
+     ====================================
+     ██ ███    ██ ██████  ███████ ██   ██ 
+     ██ ████   ██ ██   ██ ██       ██ ██  
+     ██ ██ ██  ██ ██   ██ █████     ███   
+     ██ ██  ██ ██ ██   ██ ██       ██ ██  
+     ██ ██   ████ ██████  ███████ ██   ██ 
+     ====================================
+
+/=============================================\
+                     USAGE
+\=============================================/
+
+POST_INSTALL.usg
+ 
+MONITOR.usg
+
+PERIMETRE.usg                #FIND #INFORMATION #PRIVILEGE #ESCALAD
+
+AUDIT.usg                    #AUDIT #SCAN #METADATA #LIST #INFORMATION #ENUMERATION #ENUMERATE #PENTESTE
+
+###INFORMATION_GATHERING.usg #PASSIV #ACTIV #FIND #SEARCH #META
+
+###VULN_DISCOVERY.usg
+
+###EXPLOITATION.usg
+
+###EXFILTRATION_PIVOTING.usg
+
+###REPORTING.usg
+
+\=============================================/
+                      WTFM
+\=============================================/
+
+###RTFM.usg              #HELP #NOTICE #INFORMATION #DOCUMENTATION
+
+CONFIDENTIALITY.usg      #CHIFFREMENT #MD5 #BASE64 #PASSWORD #CHIFFREMENT #ENCODE #ENCRYPT #PROXY #TOR #MAC #TAILS
+
+INTEGRITY.usg            #OS
+
+CLEANING.usg             #OS #CLEAN #LOG #IMG #METADATA #EXIF #DELETE #REMOVE #BIN #HISTORY #SNAP #PAQUET
+
+IRC.usg                  #IRC #NICKSERV #IRSSI #URL #PROXY #TOR 
+
+LOG.usg                  #OS #LOG #LOGCHECK #LOGGER #HISTORY
+
+NGINX.usg                #SERVER #NGINX #CONFIG
+
+PI.usg                   #PI #NODE
+
+BASH_TIPS.usg            #TIPS #BASH #SHELL #SIMULATION #REC #REECORD #VIDEO #COLOR
+
+HTTPS.usg                #HTTPS #WEB #NGINX #SSL #CERTIFICAT #SERVEUR
+
+SSH.usg                  #SSH #SCP
+
+DEBUG.usg                #DEBUG #CORS #CROSSORIGIN #COLOR
+
+FIREWALL.usg             #IPTABLES #GUFW #FIREWALL #RULES #BOOT #PERSISTENT
+
+PERMISSION.usg           #CHMOD #DROITS #FILE #PERMISSION #ACCESS
+
+WIFI.usg                 #ACCESSPOINT #CONFIG #WIFI #AUTHENTIFICATION #NETWORK
+
+GOOGLE.usg               #DORKS #OPERATEUR #RECHERCHE #PASSIV
+
+IP.usg                   #NETWORK #IP #SCAN #RANGE #HOST #URL #DETECT #LOCAL #PUBLIC
+
+NMAP.usg                 #NMAP #SCAN #PORT #SERVICE #ACTIV
+
+FILE_ANALYSE.usg         #EXIF #ANALYSE #FORENSIC #REVERSE
+
+OS_ANALYSE.usg           #FIND #HISTORY #FORENSIC #VERSION #OS #INFO #DISCOVERY
+
+NETWORK_ANALYSE.usg      #NETWORK #MONITORING #PORT #LISTEN #ACTIVITY #SSH #LOG #AUTH
+
+ENUMERATE.usg            #PRIVILEGE #MAIL #EMAIL #VERSION #USERS #COMPILATION #SERVICES #SENSIBLE #FILES
+
+###DNS.usg		#NETWORK #DNS #DIG #CONFIG #HOST
+###DHCP.usg		#NETWORK #DHCP #HOST
+###TROLL.usg		#TROLL #TIPS #SHELL #EGGS #GOOGLE
+###TYPE_OF_ATTACK_DENIAL_OF_SERVICE.usg #DOS #DENIALOFSERVICE #FLOOD #STRESS #CRASH #ATTACK
+###TYPE_OF_ATTACK_MEMORY_CORRUPTION.usg
+###TYPE_OF_ATTACK_WEB_VULN.usg
+###TYPE_OF_ATTACK_PASSWORD_ATTACKS.usg
+###TYPE_OF_ATTACK_CLIENT_SIDE_ATTACKS.usg
+
+\=============================================/
+                    SCRIPTS
+\=============================================/
+
+INTEGRITY_MONITOR.sh             #OS #INTEGRITY #CHECKSUM #SENSIBLE #FILE #SYSTEM #MONITORING #LIST #BASH #SCRIPT
+
+IPTABLES_ALL_LOCKED.sh           #FIREWALL #IPTABLES #LOCK #SECURE
+
+IPTABLES_BASE.sh                 #IPTABLES #SCRIPT #FIREWALL
+
+JS_BROWSER_DETECT.js             #JS #BROWSER #WEB #NAVIGATEUR #DETECT #INFORMATION #CHROME #FIREFOX #EDGE #SAFARI #IE
+
+JS_COOKIE.js                     #COOKIE #JS #METADATA #WEB
+
+JS_NOCLICK_NOSELECT_COPYPAST.js  #CLICK #CLIQUE #DISABLE #JS #WEB #COPY #SELECT
+
+\=============================================/
+                    SNIPPET
+\=============================================/
+
+BASH_FUNCTION_SNIPPET.sh        #BASH #SCRIPT #SH #FUNCTION #SNIPPET
+
+BASH_CONDITION_SNIPPET.sh       #BASH #IF #SWITCH #CONDITION #SNIPPET #CASE
+
+BASH_COLOR_SNIPPET.sh 	        #BASH #COLOR #SNIPPET
+
+JS_DATE_SNIPPET.js              #JS #SNIPPET #DATE #TIME
+
+JS_HTTP_REQUEST_SNIPPET.js      #JS #REQUEST #WEB #GET #POST #XML #FETCH #HTTP #JSON
+
+HTML_SNIPPET.html               #HTML #SNIPPET #CSS #JS #SCRIPT
+
+REACT_JS_COMPONENT_SNIPPET.js   #JS #REACT #SNIPPET #COMPONENT #CLASS #FUNCTION
+
+CSS_MEDIAQUERY_SNIPPET.css      #CSS #MEDIAQUERY #RESPONSIVE #SNIPPET
+
+NODEJS_SERVER_SNIPPET.JS        #EXPRESS #NPM #NODE #NODEJS #SERVER #SNIPPET

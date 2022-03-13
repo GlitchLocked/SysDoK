@@ -1,0 +1,145 @@
+
+     =========================================
+      ██████ ██      ███████  █████  ███    ██ 
+     ██      ██      ██      ██   ██ ████   ██ 
+     ██      ██      █████   ███████ ██ ██  ██ 
+     ██      ██      ██      ██   ██ ██  ██ ██ 
+      ██████ ███████ ███████ ██   ██ ██   ████  
+     =========================================
+
+====================================================
+                      [HISTORY]
+====================================================
+
+cat /dev/null > ~/.bash_history
+ssh user@X.X.X.X | cat /dev/null > ~/.bash_history
+
+====================================================
+                    [CACHE SIZE]
+====================================================
+sudo du -sh /var/cache/apt
+
+====================================================
+                [VIDER LA CORBEILLE]  
+====================================================
+rm -r -f ~/.local/share/Trash/*/*
+
+====================================================
+                   [BACKUP FILES]
+====================================================
+find ~/ -name '*~' 
+
+[DELETE]
+find ~/ -name '*~' -print0 | xargs -0 rm
+
+====================================================
+                      [VIGNETTES]
+====================================================
+
+rm -rf ~/.cache/thumbnails/*
+
+====================================================
+                     [SNAP] paquets
+====================================================
+
+[LISTE]
+du -h /var/lib/snapd/snaps
+
+[DELETE] SAUF le paquet core
+snap list
+snap remove nom_paquet
+
+[DISABLE] 
+sudo apt autoremove snapd
+sudo apt autoremove --purge snapd
+
+====================================================
+                   [APT] dpkg paquets
+====================================================
+
+[SIZE] 
+sudo du -sh /var/cache/apt
+
+[CLEAN] 
+sudo apt clean
+sudo apt autoclean
+sudo apt autoremove
+
+====================================================
+                      [IPTABLES]
+====================================================
+
+[RULES] 
+sudo iptables -nvL | more
+
+[DELETE] 
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -t nat -F
+sudo iptables -t mangle -F
+sudo iptables -F
+sudo iptables -X
+
+====================================================
+                        [LOG]
+====================================================
+
+[SIZE]
+du -h /var/log/
+
+[CLEAN] 
+> logfile
+or
+cat /dev/null > logfile
+or
+true | tee logfile
+or
+truncate -s 0 logfile
+truncate -s 0 /var/log/**/*.log
+
+[DELETE] 
+rm /var/log/LEFICHIER.log
+
+[LATENCE] Apres n days 
+sudo journalctl --vacuum-time=2d
+
+====================================================
+                    [HISTORY]
+====================================================
+
+history -c 
+
+====================================================
+                    [META DATA]
+====================================================
+
+[IMAGE]
+[INSTALL] 
+sudo apt-get install libimage-exiftool-perl
+
+[LIST] 
+exiftool image.jpeg
+
+[REMOVE]
+exiftool -all= image.jpeg
+
+[FILE]
+man jhead
+
+====================================================
+                  [RM SUPER SAYAN]
+====================================================
+
+shred -zu filename
+
+====================================================
+                     [MENAGE]
+             delete les dossiers vides
+====================================================
+
+find . -type d -empty -delete
+
+====================================================
+
+====================================================

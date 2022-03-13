@@ -1,0 +1,124 @@
+======================= 
+███████ ███████ ██   ██ 
+██      ██      ██   ██ 
+███████ ███████ ███████ 
+     ██      ██ ██   ██ 
+███████ ███████ ██   ██
+======================= 
+                        
+===================================================================== 
+                             [CONNECT]
+=====================================================================
+
+ssh pi@192.168.0.X
+
+===================================================================== 
+                             [CURRENT]
+===================================================================== 
+
+ss -o state established '( dport = :ssh or sport = :ssh )'
+
+===================================================================== 
+                               [SCP]
+===================================================================== 
+
+from
+scp -r user@ssh.example.com:/path/to/remote/source /path/to/local/destination
+
+to
+scp -r /path/to/local/source user@ssh.example.com:/path/to/remote/destination
+
+===================================================================== 
+                             [BANNER]
+===================================================================== 
+
+sudo nano /etc/motd
+
+===================================================================== 
+                          [REFRESH CONFIG]
+===================================================================== 
+
+sudo systemctl restart ssh.service
+
+===================================================================== 
+                              [CONFIG]
+===================================================================== 
+
+ nano /etc/ssh/sshd_config
+
+====================================================================
+
+# OS Extra version
+DebianBanner no
+VersionAddendum none
+
+# Msg before connection
+Banner /etc/issueSSH
+
+# Log connections
+LogLevel VERBOSE
+
+# Affiche le dernier log a la connection
+PrintLastLog yes
+
+# Msg After connection (/etc/motd)
+PrintMotd yes
+
+#Stop connection after 20 min
+ClientAliveInterval 1200
+ClientAliveCountMax 0
+
+#Block les login access sans pass
+PermitEmptyPasswords no
+
+#Block root connection
+PermitRootLogin no
+ChallengeResponseAuthentication no
+UsePAM no
+
+#Prevent older protocol 1 and force second
+Protocol 2
+
+#Change Port
+#Port 2025
+
+#Disable insecure access via RSH.
+IgnoreRhosts yes
+
+#Disable host-based authentication (verification)
+HostbasedAuthentication no
+
+#Disable password connection
+#PasswordAuthentication no
+
+# 30s pour s'authentifier
+LoginGraceTime 30s
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# override default of no subsystems
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+
+#Affichage graphique
+X11Forwarding yes
+
+#Tentative connection Max
+MaxAuthTries 3
+#MaxStartups 10:30:100 =======> 10 connections 30% 100 prochaines connections 
+
+#PubkeyAuthentication yes =====> connection via key
+#PermitUserEnvironment no
+#ChrootDirectory none ====> restriction folder access
+
+====================================================================
+
+====================================================================
+                    [BANNER]
+====================================================================
+
+################################################
+#               RESERVED AREA                  #
+#  All connections are monitored and recorded  #
+#           Disconnect IMMEDIATELY             #
+################################################

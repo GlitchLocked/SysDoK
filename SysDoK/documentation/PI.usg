@@ -1,0 +1,54 @@
+==========           
+██████  ██ 
+██   ██ ██ 
+██████  ██ 
+██      ██ 
+██      ██ 
+==========           
+           
+[ UPDATE ]
+
+sudo apt-get install -f
+sudo apt-get update
+sudo apt-get upgrade
+
+[WIFI AUTHENTIFICATION]
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+==============================================================
+country=FR
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+
+    network={
+    ssid="NOM2WIFI"
+    psk="MDPWIFI"
+    key_mgmt=WPA-PSK
+}
+==============================================================
+
+[ NODE JS ]
+
+Check version :
+
+uname -m
+
+SI armv6.. en version, neccessite la procedure :
+
+wget https://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-armv6l.tar.gz ?? (check new ?)
+tar -xzf node-v8.9.0-linux-armv6l.tar.gz
+cd node-v8.9.0-linux-armv6l/
+sudo cp -R * /usr/local/
+
+OU
+
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+
+SINON 
+
+sudo apt install nodejs
+
+
+[SSH]
+ssh pi@192.168.0.X
+ssh pi@172.20.10.X

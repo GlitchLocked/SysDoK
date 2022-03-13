@@ -1,0 +1,30 @@
+==========================
+███████ ██ ██      ███████ 
+██      ██ ██      ██      
+█████   ██ ██      █████   
+██      ██ ██      ██      
+██      ██ ███████ ███████ 
+==========================
+
+[EXIF] MetaData
+
+-INSTALL 
+sudo apt-get install libimage-exiftool-perl
+sudo apt-get install jhead
+
+-LIST 
+exiftool image.jpeg
+
+-REMOVE
+exiftool -all= image.jpeg
+
+==========================
+
+[TYPE]
+
+file LeFichier.extension
+
+[STRING]
+
+strings leFichier.extension
+

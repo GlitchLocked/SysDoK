@@ -1,0 +1,119 @@
+============================================
+██████  ██████   ██████  ██ ████████ ███████ 
+██   ██ ██   ██ ██    ██ ██    ██    ██      
+██   ██ ██████  ██    ██ ██    ██    ███████ 
+██   ██ ██   ██ ██    ██ ██    ██         ██ 
+██████  ██   ██  ██████  ██    ██    ███████ 
+============================================
+
+[USB]
+Prevent Users Mounting USB Storage
+
+echo "install usb-storage /bin/false" > /etc/modprobe.d/usb-storage.conf
+
+[CHMOD]
+chmod u/permissions g/permissions o/permissions file[or /dir/]
+
+Folder Permissions
+
+        Execute -> Actually enter that folder but not be able to read it's contents, see what files are located there.
+        Read -> Be Able To Read Folder Contents
+        Write -> Edit folders data. delete or create new files/folders inside it and etc
+
+File Permissions
+
+        Execute -> if it's script like index.php run it to get data from it
+        Read -> if it's text file like index.html or index.php be able to read it
+        Write -> ability to change its data
+
+=====================
+User    Group   Other
+r w -   r - -   r - x
+1 1 0   1 0 0   1 0 1
+=====================
+
+Bin     Decimal     Representation
+__________________________________
+ 000     0           - - -
+----------------------------------
+ 001     1           - - x
+----------------------------------
+ 010     2           - w -
+----------------------------------
+ 011     3           - w x
+----------------------------------
+ 100     4           r - -
+----------------------------------
+ 101     5           r - x
+----------------------------------
+ 110     6           r w -
+----------------------------------
+ 111     7           r w x
+__________________________________
+
+Read Write Xecute pour tout le monde
+chmod 777 file
+
+Read - Xecute pour tout le monde
+chmod 555 file
+
+Read for all
+chmod 444 file
+
+============================================================================
+777 -> rwxrwxrwx No restriction, global WRX any user can do anything.
+
+755 -> rwxr-xr-x Owner has full access, others can read and execute the file.
+
+700 -> rwx------ Owner has full access, no one else has access.
+
+666 -> rw-rw-rw- All users can read and write but not execute.
+
+644 -> rw-r--r-- Owner can read and write, everyone else can read.
+
+600 -> rw------- Owner can read and write, everyone else has no access.
+============================================================================
+
+============================================================================
+[RESET ROOT PASSWD]
+============================================================================
+
+echo "root:spotless" | chpasswd
+
+============================================================================
+[CREATE ANOTHER ROOT USER]
+============================================================================
+
+useradd -u0 -g0 -o -s /bin/bash -p `openssl passwd yourpass` rootuser
+
+============================================================================
+[CHANGE OWNER]
+============================================================================
+
+chown user:group blah
+
+
+===============================================================
+███████ ███████  ██████  █████  ██       █████  ██████  ███████ 
+██      ██      ██      ██   ██ ██      ██   ██ ██   ██ ██      
+█████   ███████ ██      ███████ ██      ███████ ██   ██ █████   
+██           ██ ██      ██   ██ ██      ██   ██ ██   ██ ██      
+███████ ███████  ██████ ██   ██ ███████ ██   ██ ██████  ███████ 
+===============================================================
+
+============================================================================
+[CRONTAB]
+============================================================================
+
+
+============================================================================
+[SSUID]
+============================================================================
+
+https://gtfobins.github.io/
+GTFOBins is a curated list of Unix binaries that can be used 
+to bypass local security restrictions in misconfigured systems.
+
+============================================================================
+[SUDO]
+============================================================================

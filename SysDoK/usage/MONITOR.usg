@@ -1,0 +1,159 @@
+       /=============================================\
+       ||                      .__                  ||
+       ||   ____   ____   ____ |  |   ____   ____   ||
+       || _/ __ \_/ __ \ / ___\|  |  /  _ \ /  _ \  ||
+       || \  ___/\  ___// /_/  >  |_(  <_> |  <_> ) ||
+       ||  \___  >\___  >___  /|____/\____/ \____/  ||
+       ||      \/     \/_____/                  2021||
+       \=============================================/
+  
+  ==========================================================
+  ███    ███  ██████  ███    ██ ██ ████████  ██████  ██████  
+  ████  ████ ██    ██ ████   ██ ██    ██    ██    ██ ██   ██ 
+  ██ ████ ██ ██    ██ ██ ██  ██ ██    ██    ██    ██ ██████  
+  ██  ██  ██ ██    ██ ██  ██ ██ ██    ██    ██    ██ ██   ██ 
+  ██      ██  ██████  ██   ████ ██    ██     ██████  ██   ██ing 
+  ==========================================================
+                                                             
+================================================================
+============================[SYSTEM]============================
+================================================================
+
+================================================================
+                             [USERS]
+================================================================
+
+[current open session]
+
+who -aH
+
+w
+
+[last user logged]
+
+last -ax
+
+================================================================
+                            [SERVICES]
+================================================================
+
+service --status-all
+
+================================================================
+                             [PROCESS]
+================================================================
+
+[TOP]
+
+Par défaut, son critère de tri est l'utilisation actuelle du processeur (touche P), mais on peut opter pour la mémoire occupée (touche M), le temps processeur consommé (touche T) ou le numéro de processus ou PID (touche N). La touche k (comme kill) nécessite un numéro de processus à tuer. r (comme renice) change la priorité d'un processus. 
+
+[PS]
+
+ps 
+
+arborescence
+ps -ejh
+
+top 10 en RAM
+ps aux | sort -nk +4 | tail
+
+[GESTIONAIRE DES TACHES]
+
+gnome-system-monitor
+
+[RAM]
+
+free
+
+================================================================
+                             [LOG]
+================================================================
+
+sudo tail -n2 -f /var/log/LEFICHIERDE.log
+
+================================================================
+                           [ SCRIPT ]
+================================================================
+
+[CHECKSUM]
+Check l'integrite des fichiers sensibles, avc une alerte
+
+./script/INTEGRITY_MONITOR.sh
+
+[POT DE MIEL REPOSITORY]
+Check l'acces/lecture/ecriture sur l'arborescence d'un dossier
+
+sudo apt install inotify-tools
+
+inotifywatch -r /home/phoenix/capsule/gouffre/aministrap -t 20
+
+================================================================
+============================[NETWORK]===========================
+================================================================
+
+================================================================
+                          [PING DETECTION]
+================================================================
+
+sudo tcpdump -i any 'icmp and icmp[icmptype]=icmp-echo'
+
+================================================================
+                              [PORT]
+================================================================
+
+ngrep -d lo -W byline -t -q '' 'dst port 3000'
+      |     |         |  |  |  |
+      |     |         |  |  |  +> expression de filtre (ici, tout ce qui est à destination
+      |     |         |  |  |     du port 3000)
+      |     |         |  |  |
+      |     |         |  |  +---> expression de match (porte sur le contenu des paquets)
+      |     |         |  |
+      |     |         |  +------> quiet : ne rien afficher d'autre que les paquets
+      |     |         |
+      |     |         +---------> afficher un timestamp à chaque réception de paquet
+      |     |  
+      |     +-------------------> mode d'affichage ("byline" est surtout pratique pour du HTTP)
+      |
+      +-------------------------> interface à écouter : localhost, dans notre cas
+      
+Il faudra adapter les paramètres au contenu que l’on souhaite capturer. 
+Par exemple, l’expression de match '^(GET|POST) ' 
+permettra de ne récupérer que les requêtes GET ou POST d’un flux HTTP.
+
+================================================================
+                              [SSH]
+================================================================
+
+ss -o state established '( dport = :ssh or sport = :ssh )'
+
+sudo tcpdump -i wlp3s0 port 22
+
+================================================================
+                              [WEB]
+================================================================
+
+[HTTP]
+ss -o state established '( dport = :http or sport = :http )'
+
+[HTTPS]
+ss -o state established '( dport = :https or sport = :https )'
+
+================================================================
+                            [CONNEXION]
+================================================================
+
+sudo lsof -Pi | sort
+
+sudo iftop
+
+================================================================
+                          [MY TRACE ROUTE]
+================================================================
+
+mtr
+
+================================================================
+                           [RESSOURCES]
+================================================================
+
+https://hackertarget.com/tcpdump-examples/

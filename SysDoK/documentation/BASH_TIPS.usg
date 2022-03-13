@@ -1,0 +1,127 @@
+===========================
+████████ ██ ██████  ███████ 
+   ██    ██ ██   ██ ██      
+   ██    ██ ██████  ███████ 
+   ██    ██ ██           ██ 
+   ██    ██ ██      ███████ 
+===========================
+
+==================================================================
+            [AZERTY]
+==================================================================
+
+setxkbmap fr
+
+==================================================================
+            [RACCOURCITS]
+==================================================================
+
+CTRL-c Stop current command
+
+CTRL-z Sleep program
+
+CTRL-a Go to start of line
+
+CTRL-e Go to end of line
+
+CTRL-u Cut from start of line
+
+CTRL-k Cut to end of line
+
+CTRL-r Search history
+
+!! Repeat last command
+
+!abc:p Print last command starting with abc
+
+______
+==================================================================
+            [WAIT]
+==================================================================
+
+timeout 5s COMMAND
+_______
+==================================================================
+            [METEO]
+==================================================================
+
+curl http://wttr.in/
+
+==================================================================
+            [COPY PROGRESS INFO]
+==================================================================
+
+man pv 
+
+pv sourcefile > destfile
+_________________
+==================================================================
+            [DATA SIMULATION]
+==================================================================
+
+cat /dev/urandom | hexdump -C | grep "ca fe"
+_________________
+==================================================================
+            [SIMULATE TIPYNG]
+==================================================================
+
+sudo apt install pv
+
+echo "No tech == No futur " | pv -qL 10
+
+==================================================================
+            [COLOR]
+==================================================================
+
+#!/bin/bash
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+echo -e "${GREEN}NO TECH ${NC} == ${RED} NO FUTUR" 
+
+==================================================================
+            [REC]
+==================================================================
+
+ffmpeg -f x11grab -r 25 -s 800x600 -i :0.0 /tmp/outputFile.mpg
+
+sudo apt install asciicinema
+https://asciinema.org/
+
+==================================================================
+            [MATRIX]
+==================================================================
+
+sudo apt install cmatrix
+
+tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"
+
+==================================================================
+            [RACINE]
+==================================================================
+
+/etc/passwd            -> Contains local Linux users.
+
+/etc/shadow            -> Contains local account password hashes.
+
+/etc/group             -> Contains local account groups.
+
+/etc/init.d/           -> Contains service init script - worth a look to see whats installed.
+
+/etc/hostname          -> System hostname.
+
+/etc/network/interface -> Network interfaces.
+
+/etc/resolv.conf       -> System DNS servers.
+
+/etc/profile           -> System environment variables.
+
+~/.ssh/                -> SSH keys.
+
+~/.bash_history        -> Users bash history log.
+
+/var/log/              -> Linux system log files are typically stored here.
+
+/var/adm/              -> UNIX system log files are typically stored here.
+
+/etc/fstab             -> File system mounts.
