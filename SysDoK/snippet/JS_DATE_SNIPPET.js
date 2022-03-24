@@ -12,3 +12,7 @@ const format = (nb) => {
     if (nb < 10) return `0${nb}`
     else return nb
 }
+
+// listeFR = { jours : [ "Dimanche","Lundi","Mardi","Mercredi ","Jeudi","Vendredi","Samedi"],
+//             mois : [ "Decembre","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Janvier"]},
+
