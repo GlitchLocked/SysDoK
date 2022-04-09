@@ -1,0 +1,227 @@
+2022=======================================================
+██ ██████  ███████ ███    ██ ████████ ██ ████████ ██    ██ 
+██ ██   ██ ██      ████   ██    ██    ██    ██     ██  ██  
+██ ██   ██ █████   ██ ██  ██    ██    ██    ██      ████   
+██ ██   ██ ██      ██  ██ ██    ██    ██    ██       ██    
+██ ██████  ███████ ██   ████    ██    ██    ██       ██    
+===========================================================
+
+=========
+ ██ 
+███ 
+ ██ 
+ ██ 
+ ██ 
+=========
+Cartographie Numerique
+======================
+
+A-Noeuds d'identifications	
+	A.1 Phone number
+	A.2 Mails
+	A.3 Photo
+	A.4 Device
+	A.5 CB
+
+B-Actif
+	L'identiT numerique neccessairement sensible.
+	
+	B.0 Gouv
+		B.0.1 AutoEntrepreneur
+		B.0.2 Impots
+		B.0.3 Amelie
+	B.1 Paypal
+	B.2 laposte
+	B.3 CA
+	B.4 Coffre Fort Numerique
+		B.4.1 Laposte
+		B.4.2 MyPeopleDoc
+	B.5 EDF
+
+C-Grand compte
+	C.O OVH
+	C.1 Google
+		C.1.2 Gmail
+		C.1.3 Youtube
+		C.1.3 Drive
+	C.2 FaceBook
+		C.2.1 WhatApp
+	C.3 Reseaux Sociaux
+		C.3.1	Twitter
+		C.3.2	Instagram
+		C.3.3	LinkedIn
+		C.3.4	TikTok
+	C.4 Site Commerciaux
+		C.4.1 Amazon
+		C.4.2 Aliexpress
+		C.4.3 Ebay
+	C.5 Microsoft
+		C.5.1 Skype
+	C.6 Apple
+		C.6.1 Cloud
+	C.10scord
+
+D - Cartographie Services
+	Identification des pattern de recherche sur les boites mails 
+	
+	D.1 Inscription
+	D.2 Newsletters
+	D.3 Site marchand
+	D.4 Game
+		D.4.1 Albion
+		D.4.2 Blizzard
+		D.4.3 Steam
+	D.5 FideliT
+
+=========
+██████   
+     ██  
+ █████   
+██       
+███████  
+=========
+Identification
+======================
+
+A-Perimetre a supprimer
+	A.1 Liaison parents/enfants des grands comptes
+	A.2 Photos
+	A.3 Publications
+	A.4 Geolocalisation
+	A.5 Tout type de donnees
+		A.5.1 IP
+		A.5.2 Mail
+		A.5.3 Compte
+
+
+B-Identification Vecteur Support Contact
+	B.0 Params&Config du compte
+
+	B.1.1 Nom Prenom Personne physique
+	B.1.2 Addresse mail
+	B.1.3 Addresse postale
+	B.1.4 Nom socieT&Service
+
+=========
+██████   
+     ██  
+ █████   
+     ██  
+██████   
+=========
+Sauvegarde
+======================
+A-Private Access Space
+
+	A.1 RaspBerry Pi
+		P.1.0 Wifi Access Point - Cloud
+	A.2 Clef USB chiffree
+	A.3 Paper Mind
+
+B-Authentification
+	B.0 Solution banque MDP
+	B.1 Renouvellement MDP Actif
+
+=========
+██   ██  
+██   ██  
+███████  
+     ██  
+     ██  
+=========
+Nouvelle ID
+======================
+A-Dispo Pseudo
+
+	https://www.namecheckr.com/
+
+B-Nouveau Compte
+	B.0 Reseau Sociaux
+	B.1 Mail
+	B.2 SPAM Box
+
+=========
+███████  
+██       
+███████  
+     ██  
+███████  
+=========
+Nettoyage
+======================
+
+A-Relations Obsoletes
+B-Parametre et Configuration des comptes
+C-Information navigateur
+D-Suppression des photos
+E-Suppression des postes
+F-Desabonnement
+G-People
+H-historique d'achat
+I-Cloud et Drive
+
+=========
+ ██████  
+██       
+███████  
+██    ██ 
+ ██████  
+=========
+Purge
+======================
+
+A - RGPD
+Le règlement général sur la protection des données
+   
+   A.1 Article 17 - Droit à l'effacement («droit à l'oubli»)
+   A.2 CNIL _ Commission nationale de l'informatique et des libertés
+       A.2.1 Modele de Courrier
+	       https://www.cnil.fr/fr/modeles/courrier
+	       https://www.cnil.fr/fr/modele/courrier/supprimer-des-donnees-personnelles
+	       https://www.cnil.fr/fr/modele/courrier/supprimer-des-informations-vous-concernant-dun-site-internet
+	       https://www.cnil.fr/fr/modele/courrier/cloturer-un-compte-en-ligne
+   A.3 Prevoir une traduction
+	
+B - F.A.I
+	B.1 Suppression data lies au compte
+	B.2 Desinscription 
+
+=========
+███████  
+     ██  
+    ██   
+   ██    
+   ██    
+=========
+Controle
+======================
+A-OSINT pour Open Source Intelligence
+	
+	A.0 Framework
+		A.0.0 https://osintframework.com/
+	A.1 Reconnaissance facial
+		A.1.1 Yandex
+	A.2 Recherche MetaData ?!!
+	A.3 Recherche par pseudo
+
+B-Check IdentiT via l'angle public
+
+=========
+ █████   
+██   ██  
+ █████   
+██   ██  
+ █████   
+=========
+Rebelotte A l'etape 1 si le control sort encore des informations
+======================
+
+=========
+ █████   
+██   ██  
+ ██████  
+     ██  
+ █████   
+=========
+
+2 quoi ?
